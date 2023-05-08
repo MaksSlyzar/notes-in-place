@@ -1,0 +1,131 @@
+@import "../../styles/vars.scss";
+
+.NoteEditor {
+    min-height: 600px;
+    width: 600px;
+    background: $background;
+    
+    &_Title {
+        text-align: left;
+        margin: 26px;
+        margin-left: 50px;
+        color: #ffffff;
+    }
+
+    &_NoteEdit {
+        width: calc(100% - 100px);
+        margin-left: 50px;
+        height: 300px;
+        // display: list-item;
+        // padding: 50px;
+        // background: gray;
+        outline: none;
+        overflow: auto;
+
+        div {
+            color: #fff;
+            border-bottom: 1px #929292 solid;
+            // margin-bottom: 13px;
+            padding-top: 10px;
+            margin-bottom: 3px;
+            height: 30px;
+        }
+    }
+
+    &_UploadToDirectory {
+        width: 100%;
+        margin: 5px;
+        margin-left: 50px;
+        position: relative;
+        text-align: left;
+
+        .Label {
+            margin-left: 2px;
+            color: #4CAAEF;
+            text-align: left;
+            font-size: 12px;
+        }
+
+        input {
+            width: 150px;
+            height: 25px;
+            background-color: #1D1D1D;
+            border: none;
+            border-bottom: #4CAAEF solid 3px;
+            outline: none;
+            color: white;
+            font-size: 15px;
+        }
+
+        .Dropdown {
+            position: absolute;
+            left: 160px;
+            width: 160px;
+            height: 100px;
+            background-color: none;
+            overflow: auto;
+            overflow-x: hidden;
+            // overflow-y: scroll;
+            
+            .item {
+                border: none;
+                margin: 1px;
+                padding-left: 5px;
+                background-color: #1D1D1D;
+                height: 24px;
+                width: 100%;
+                color: white;
+                font-size: 13px;
+                display: flex;
+                align-items: center;
+            }
+
+            .item:hover {
+                background-color: #141414;
+            }
+        }
+    }
+
+    &_CompleteTime {
+        max-width: 350px;
+        margin: 5px;
+        margin-left: 50px;
+        text-align: left;
+
+        .Label {
+            margin-left: 2px;
+            color: #4CAAEF;
+            text-align: left;
+            font-size: 12px;
+        }
+
+        input {
+            width: 200px;
+            height: 25px;
+            background-color: #1D1D1D;
+            border: none;
+            border-bottom: #4CAAEF solid 3px;
+            outline: none;
+            color: white;
+            font-size: 15px;
+        }
+    }
+
+    &_SaveButton {
+        margin: 5px;
+        margin-left: 50px;
+        width: 212px;
+        height: 39px;
+        background-color: #4CAAEF;
+        border-bottom: solid #0062BD 2px;
+        color: white;
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.none {
+    display: none;
+}
