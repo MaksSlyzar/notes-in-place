@@ -9,7 +9,7 @@ class NodeEditor extends React.Component {
         this.contentEditable = React.createRef();
 
         this.state = {
-            html: "<b>Hello <i>World</i></b>",
+            html: "<div>Note</div>",
             directories: ["Hello world", "Today", "Yesterday", "Programming", "English"],
             selectedDirectory: "",
             openedDropdownDirectories: false,
@@ -17,6 +17,10 @@ class NodeEditor extends React.Component {
             completeTime: null,
             noteContent: ""
         };
+    }
+
+    handleNoteEdit = (evt) => {
+        this.setState({ html: evt.target.value });
     }
 
     openDropdownDirectory (event, value) {
@@ -45,13 +49,14 @@ class NodeEditor extends React.Component {
             <div className="NoteEditor">
                 <div className="NoteEditor_Title">Note title</div>
 
-                <div 
-                    // dangerouslySetIn
-                    nerHTML={{__html: this.state.noteContent} } 
-                    
-                    className="NoteEditor_NoteEdit" contentEditable={true}>
-                    <div></div>
-                </div>
+                <ContentEditable 
+                    className="NoteEditor_NoteEdit"
+                    html={this.state.html}
+                    disabled={false}
+                    tagName='article'
+                    innerRef={this.contentEditable}
+                    onChange={this.handleNoteEdit}
+                />
 
                 <div className="NoteEditor_StylingButtons">
                     <button>B</button>
