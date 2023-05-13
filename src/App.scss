@@ -54,3 +54,16 @@
 *::-webkit-scrollbar {
   width: 10px;
 }
+
+html, body, #root .App {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+* {
+  scrollbar-color:  #0093D1 #161616;
+  scrollbar-width: 10px;
+}

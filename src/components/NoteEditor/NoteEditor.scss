@@ -1,20 +1,20 @@
 @import "../../styles/vars.scss";
 
 .NoteEditor {
-    min-height: 600px;
-    width: 600px;
+    min-height: 100%;
+    border: 2px #1D1D1D solid;
     background: $background;
     
     &_Title {
-        text-align: left;
+        text-align: center;
         margin: 26px;
-        margin-left: 50px;
+        margin-left: 20px;
         color: #ffffff;
     }
 
     &_NoteEdit {
-        width: calc(100% - 100px);
-        margin-left: 50px;
+        width: calc(100% - 20px);
+        margin-left: 10px;
         height: 300px;
         // display: list-item;
         // padding: 50px;
@@ -23,71 +23,24 @@
         overflow: auto;
 
         div {
+            transition: all 1s;
             color: #fff;
-            border-bottom: 1px #929292 solid;
+            border-bottom: 1px black solid;
             // margin-bottom: 13px;
             padding-top: 10px;
             margin-bottom: 3px;
             height: 30px;
         }
-    }
 
-    &_UploadToDirectory {
-        width: 100%;
-        margin: 5px;
-        margin-left: 50px;
-        position: relative;
-        text-align: left;
-
-        .Label {
-            margin-left: 2px;
-            color: #4CAAEF;
-            text-align: left;
-            font-size: 12px;
-        }
-
-        input {
-            width: 150px;
-            height: 25px;
-            background-color: #1D1D1D;
-            border: none;
-            border-bottom: #4CAAEF solid 3px;
-            outline: none;
-            color: white;
-            font-size: 15px;
-        }
-
-        .Dropdown {
-            position: absolute;
-            left: 160px;
-            width: 160px;
-            height: 100px;
-            background-color: none;
-            overflow: auto;
-            overflow-x: hidden;
-            // overflow-y: scroll;
-            
-            .item {
-                border: none;
-                margin: 1px;
-                padding-left: 5px;
-                background-color: #1D1D1D;
-                height: 24px;
-                width: 100%;
-                color: white;
-                font-size: 13px;
-                display: flex;
-                align-items: center;
-            }
-
-            .item:hover {
-                background-color: #141414;
-            }
+        .item {
+            border-bottom: 1px #929292 solid;
+            // background-color: white;
         }
     }
 
     &_CompleteTime {
         max-width: 350px;
+        display: none;
         margin: 5px;
         margin-left: 50px;
         text-align: left;
@@ -112,6 +65,7 @@
     }
 
     &_SaveButton {
+        transition: .15s all;
         margin: 5px;
         margin-left: 50px;
         width: 212px;
@@ -123,9 +77,42 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
+    }
+
+    &_SaveButton:hover {
+        background-color: #0062BD;
+        border-bottom: solid #4CAAEF 4px;
+    }
+
+    &_StylingButtons {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+
+        &-sm {
+            color: white;
+            width: 30px;
+            height: 30px;
+            background-color: #1D1D1D;
+            margin-right: 12px;
+            padding-top: 2px;
+        }
     }
 }
 
 .none {
     display: none;
+}
+
+@media screen and (max-width:900px) {
+    .NoteEditor {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .NoteEditor {
+        width: 600px;
+    }
 }
