@@ -1,7 +1,7 @@
 @import "../../styles/vars.scss";
 
 .Directories {
-    width: 300px;
+    width: 360px;
     min-height: 200px;
     background-color: $background;
     border: #1D1D1D 2px solid;
@@ -43,10 +43,22 @@
 
     &_ListItem {
         background-color: #1D1D1D;
-        width: 100%;
+        margin-left: 5px;
+        width: calc(100% - 10px);
         min-height: 24px;
         margin-top: 4px;
         position: relative;
+    }
+
+    &_ListItemNewNoteIcon {
+        position: absolute;
+        top: 3px;
+        right: 1px;
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
     }
 
     &_ListItemLabel {
@@ -67,7 +79,7 @@
 
     &_ListItemCompleteNotes {
         position: absolute;
-        right: 40px;
+        right: 60px;
         color: #9D9D9D;
         font-size: 14px;
     }
@@ -76,7 +88,7 @@
         position: absolute;
         width: 20px;
         height: 20px;
-        right: 10px;
+        right: 30px;
         top: 2px;
 
         img {
@@ -96,8 +108,10 @@
 
         &-Item {
             margin-top: 5px;
-            height: 24px;
+            height: 28px;
+            // width: 90%;
             position: relative;
+            padding-top: 3px;
             border-bottom: 1px black solid;
 
             &-Active {
@@ -139,5 +153,11 @@
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .Directories {
+        width: 100%;
     }
 }

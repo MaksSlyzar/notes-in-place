@@ -26,8 +26,10 @@ class Note {
     icon;
     complete = false;
     active;
+    id;
 
     constructor (name, active = false) {
+        this.id = Math.round(Math.random() * 1000);
         this.name = name;
         this.active = active;
     }
@@ -63,6 +65,9 @@ class Directories extends React.Component {
                             <div className="Directories_ListItemCompleteNotes">{directory.getCompleteNotes()}/{directory.notes.length} notes</div>
                             <div className="Directories_ListItemCompleteIcon">
                                 <img src={CompleteNoIcon} />
+                            </div>
+                            <div className="Directories_ListItemNewNoteIcon">
+                                <img src={NewDirectoryIcon} />
                             </div>
                         </div>,
                         
